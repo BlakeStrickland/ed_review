@@ -70,6 +70,13 @@ class EmployeeDepartmentTest < Minitest::Test
     blake.satisfactory_employee(true)
     assert_equal false, link.satisfactory_employee(false)
     assert_equal true, blake.satisfactory_employee(true)
+  end
 
+  def test_10_give_raise
+    blake = Employee.new("Blake", "919-555-5555", "email@email.com", 54000)
+    blake.satisfactory_employee(true)
+    blake.give_raise(0.10)
+
+    assert_equal 59400.0, blake.salary
   end
 end

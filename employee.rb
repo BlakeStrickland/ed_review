@@ -18,4 +18,8 @@ class Employee
   def satisfactory_employee(yes_no)
     self.satisfactory = yes_no
   end
+
+  def give_raise(raise_percent)
+    self.salary = (self.salary).to_f + (self.salary * raise_percent)
+  end
 end
