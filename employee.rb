@@ -20,6 +20,8 @@ class Employee
   end
 
   def give_raise(raise_percent)
-    self.salary = (self.salary).to_f + (self.salary * raise_percent)
+    if self.satisfactory
+      self.salary = (self.salary).to_f + (self.salary * raise_percent)
+    end
   end
 end
