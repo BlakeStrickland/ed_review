@@ -53,8 +53,6 @@ class EmployeeDepartmentTest < Minitest::Test
     education.add_employees(blake)
     education.add_employees(fox)
     education.add_employees(link)
-
-
     assert_equal 164000, education.total_department_salary
   end
 
@@ -81,5 +79,24 @@ class EmployeeDepartmentTest < Minitest::Test
 
     assert_equal 59400.0, blake.salary
     assert_equal 100000, link.salary
+  end
+
+  def test_11_give_department_raise
+    blake = Employee.new("Blake", "919-555-5555", "email@email.com", 54000)
+    fox = Employee.new("Fox", "919-555-5555", "email@email.com", 10000)
+    link = Employee.new("Link", "919-555-5555", "email@email.com", 100000)
+    education = Department.new("Education")
+    education.add_employees(blake)
+    education.add_employees(fox)
+    education.add_employees(link)
+    blake.satisfactory_employee(true)
+    fox.satisfactory_employee(true)
+
+    education.give_total_department_raise(10000)
+
+    assert_equal 59000, blake.salary
+    assert_equal 15000, fox.salary
+    assert_equal 100000, link.salary
+
   end
 end
