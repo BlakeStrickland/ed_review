@@ -6,4 +6,8 @@ class Employee
     @email = email
     @salary = salary
   end
+
+  def add_to_department
+    
+  end
 end
