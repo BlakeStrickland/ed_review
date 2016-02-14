@@ -1,6 +1,6 @@
 class Employee
   attr_reader :name, :phone_number, :email
-  attr_accessor :salary, :review
+  attr_accessor :salary, :review, :satisfactory
 
   def initialize(name, phone_number, email, salary, review = nil, satisfactory = false)
     @name = name
@@ -13,5 +13,9 @@ class Employee
 
   def give_review(p_review)
     self.review = p_review
+  end
+
+  def satisfactory_employee(yes_no)
+    self.satisfactory = yes_no
   end
 end

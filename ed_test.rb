@@ -64,7 +64,12 @@ class EmployeeDepartmentTest < Minitest::Test
     assert_equal "awesome", blake.review
   end
 
-  def method_name
+  def test_09_satisfaction_employee
+    blake = Employee.new("Blake", "919-555-5555", "email@email.com", 54000)
+    link = Employee.new("Link", "919-555-5555", "email@email.com", 100000)
+    blake.satisfactory_employee(true)
+    assert_equal false, link.satisfactory_employee(false)
+    assert_equal true, blake.satisfactory_employee(true)
 
   end
 end
