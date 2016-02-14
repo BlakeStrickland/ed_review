@@ -1,5 +1,7 @@
 class Employee
-  attr_reader :name, :phone_number, :email, :salary
+  attr_reader :name, :phone_number, :email
+  attr_accessor :salary
+  
   def initialize(name, phone_number, email, salary)
     @name = name
     @phone_number = phone_number
@@ -8,6 +10,6 @@ class Employee
   end
 
   def add_to_department
-    
+
   end
 end

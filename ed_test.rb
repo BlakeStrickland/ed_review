@@ -44,4 +44,19 @@ class BattleshipTest < Minitest::Test
     education = Department.new("Education")
     assert_equal "Education", education.dept_name
   end
+
+  def test_07_get_total_department_salary
+    blake = Employee.new("Blake", "919-555-5555", "email@email.com", 54000)
+    fox = Employee.new("Fox", "919-555-5555", "email@email.com", 10000)
+    link = Employee.new("Link", "919-555-5555", "email@email.com", 100000)
+    education = Department.new("Education")
+    education.add_employees(blake)
+    education.add_employees(fox)
+    education.add_employees(link)
+
+
+    assert_equal 164000, education.total_department_salary
+
+  end
+
 end
