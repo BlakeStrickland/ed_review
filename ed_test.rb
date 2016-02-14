@@ -56,7 +56,26 @@ class BattleshipTest < Minitest::Test
 
 
     assert_equal 164000, education.total_department_salary
-
   end
 
+  def test_08_give_employee_review
+    blake = Employee.new("Blake", "919-555-5555", "email@email.com", 54000)
+    blake.review = "fg;l;flg sldkflsdf g;aourhgl kjfhgs fkjahlsf ghker ga;sflghar g
+                    ghsaf;gsjhfl gksfjhg iehfj kdgs dfhv lkgsjdfhgil e ghkfskjdf ghsaf
+                    gslkdfghlfjdkgslf gsdfkjghsldfkjgdlskghlsdfkjghdf lvaflkajhsflgsd f
+                    sdfgkhlsdfvushkfdjghs flsdjkfhs flgkjsh glskf gslfkgjh selkdfjf
+                    fsglhdfkjstshglfkgshdf
+                    gsdhfjkhglsdkfgh dfsglkdfhg lsdfgshdlfgvkjsrhglerghaiurhgslkdfjg
+                    fkgshvirn vrsklhfg evr vsflhgsv erglh srgkhsfdjhgaisrhg sfg sdfgkhlsd
+                    fkjhvlkshktgjh fgsdfjh vuowlrjqfn sdigrj akgjhfi  ejrng uf"
+
+    assert_equal "fg;l;flg sldkflsdf g;aourhgl kjfhgs fkjahlsf ghker ga;sflghar g
+                    ghsaf;gsjhfl gksfjhg iehfj kdgs dfhv lkgsjdfhgil e ghkfskjdf ghsaf
+                    gslkdfghlfjdkgslf gsdfkjghsldfkjgdlskghlsdfkjghdf lvaflkajhsflgsd f
+                    sdfgkhlsdfvushkfdjghs flsdjkfhs flgkjsh glskf gslfkgjh selkdfjf
+                    fsglhdfkjstshglfkgshdf
+                    gsdhfjkhglsdkfgh dfsglkdfhg lsdfgshdlfgvkjsrhglerghaiurhgslkdfjg
+                    fkgshvirn vrsklhfg evr vsflhgsv erglh srgkhsfdjhgaisrhg sfg sdfgkhlsd
+                    fkjhvlkshktgjh fgsdfjh vuowlrjqfn sdigrj akgjhfi  ejrng uf", blake.review
+  end
 end
