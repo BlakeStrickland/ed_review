@@ -98,4 +98,21 @@ class EmployeeDepartmentTest < Minitest::Test
     assert_equal 15000, fox.salary
     assert_equal 100000, link.salary
   end
+
+  def test_12_block_for_dept_raises
+    blake = Employee.new(name: "Blake",phone_number: "919-555-5555",email: "email@email.com", salary: 54000)
+    fox = Employee.new(name: "Fox",phone_number: "919-555-5555",email: "email@email.com",salary: 10000)
+    link = Employee.new(name: "Link",phone_number: "919-555-5555",email: "email@email.com",salary: 100000)
+    education = Department.new("Education")
+    array = [blake, fox, link]
+    education.use_block_for_dept_raise(array, 10000) {|up_for_raise| up_for_raise.each do |x|
+                                if x.satisfactory && x.salary < 75000
+                                  up_for_raise << x
+                                end
+                              end
+                              }
+    assert_equal 59000, blake.salary
+    assert_equal 15000, fox.salary
+    assert_equal 100000, link.salary
+  end
 end

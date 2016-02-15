@@ -29,4 +29,14 @@ class Department
       i.salary = i.salary + (amount / up_for_raise.length)
     end
   end
+
+
+  def use_block_for_dept_raise(array, amount)
+    up_for_raise = []
+    
+    yield(array)
+    up_for_raise.each do |i|
+      i.salary = i.salary + (amount / up_for_raise.length)
+    end
+  end
 end
